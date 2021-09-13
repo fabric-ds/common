@@ -9,7 +9,7 @@ This repo is an npm 7 workspaces based monorepo containing common utility packag
 After cloning the repo, run the following command to install dependencies in all workspaces:
 
 ```
-npm run install --workspaces
+npm install --workspaces
 ```
 
 Then go into the package you wish to work on and run:
