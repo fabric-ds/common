@@ -10,14 +10,14 @@ class FabricDocsNavigation extends HTMLElement {
                 type="text/css"
                 href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
             />
-            <nav>
-                <img src="logo url here" alt="" />
-                <ul>
-                    <li><a href="https://opensource.finn.no/fabric-design">Design</a></li>
-                    <li><a href="https://opensource.finn.no/fabric-css">CSS</a></li>
-                    <li><a href="https://opensource.finn.no/fabric-react">React</a></li>
-                    <li><a href="https://opensource.finn.no/fabric-vue">Vue</a></li>
-                    <li><a href="https://opensource.finn.no/fabric-elements">Elements</a></li>
+            <nav class="flex">
+                <h1 class="h4"><img src="logo url here" alt="" />Fabric</h1>
+                <ul class="flex">
+                    <li><a class="px-24 py-16 text-gray-700" href="https://opensource.finn.no/fabric-design">Design</a></li>
+                    <li><a class="px-24 py-16 text-gray-700" href="https://opensource.finn.no/fabric-css">CSS</a></li>
+                    <li><a class="px-24 py-16 text-gray-700" href="https://opensource.finn.no/fabric-react">React</a></li>
+                    <li><a class="px-24 py-16 text-gray-700" href="https://opensource.finn.no/fabric-vue">Vue</a></li>
+                    <li><a class="px-24 py-16 text-gray-700" href="https://opensource.finn.no/fabric-elements">Elements</a></li>
                 </ul>
             </nav>
         `;
