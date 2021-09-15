@@ -8,19 +8,34 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Nav Element</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+    />
+    <title>Sidebar Element</title>
   </head>
   <body>
     <f-docs-sidebar>
-      <f-docs-sidebar-section>
-        <h3 slot="title">Design</h3>
-        <ul slot="items">
-          <li><a href="#">Fabric</a></li>
-          <li><a href="#">Foundations</a></li>
-          <li><a href="#">Components</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
-      </f-docs-sidebar-section>
+      <script type="application/json">
+        {
+          "category": "Design",
+          "items": [
+            {
+              "title": "Fabric",
+              "open": false,
+              "items": [
+                { "title": "Principles", "href": "#1" },
+                { "title": "What's new", "href": "#1" },
+                { "title": "Getting started", "href": "#1" }
+              ]
+            },
+            { "title": "Foundations", "open": false },
+            { "title": "Components", "open": false },
+            { "title": "Resources", "open": false }
+          ]
+        }
+      </script>
     </f-docs-sidebar>
     <!-- Link script files here -->
     <script src="index.js"></script>
