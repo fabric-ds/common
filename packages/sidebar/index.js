@@ -28,16 +28,23 @@ class FabricDocsSidebar extends HTMLElement {
     );
     this.innerHTML = '';
 
-    this.shadowRoot.querySelector('#fabric-docs-sidebar').innerHTML += `
+    this.render(true);
+  }
+
+  render(first) {
+    this.shadowRoot.querySelector('#fabric-docs-sidebar').innerHTML = `
     <h3 class="text-12 text-gray-500 mt-12 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
     }</h3>
     <ul>
     ${this.entries.items
       .map((i) => {
-        const id = Math.random().toString(36).substr(2, 9);
-        this.menuIds.push(id);
-        this.entries.items[this.entries.items.indexOf(i)].id = id;
+        let id = i.id || '';
+        if (first) {
+          id = Math.random().toString(36).substr(2, 9);
+          this.menuIds.push(id);
+          this.entries.items[this.entries.items.indexOf(i)].id = id;
+        }
 
         return `<li class="my-4">
           <a id="${id}" ${
@@ -74,8 +81,14 @@ class FabricDocsSidebar extends HTMLElement {
       const id = this.menuIds[i];
 
       this.shadowRoot.getElementById(id).addEventListener('click', () => {
-        const e = this.entries.items.filter((e) => e.id === id);
-        console.log(e);
+        const e = this.entries.items.filter((e) => e.id === id)[0];
+
+        this.entries.items = this.entries.items.map((i) => ({
+          ...i,
+          open: e.id === i.id ? !i.open : i.open,
+        }));
+
+        this.render();
       });
     }
   }
