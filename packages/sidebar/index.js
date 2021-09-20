@@ -35,8 +35,6 @@ class FabricDocsSidebar extends HTMLElement {
         : i.open,
     }));
 
-    console.log(this.entries.items);
-
     this.render(true);
   }
 
