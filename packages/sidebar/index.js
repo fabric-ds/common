@@ -28,6 +28,15 @@ class FabricDocsSidebar extends HTMLElement {
     );
     this.innerHTML = '';
 
+    this.entries.items = this.entries.items.map((i) => ({
+      ...i,
+      open: !!i.items?.filter((i) => document.location.href.includes(i.href))[0]
+        ? !i.open
+        : i.open,
+    }));
+
+    console.log(this.entries.items);
+
     this.render(true);
   }
 
@@ -64,7 +73,15 @@ class FabricDocsSidebar extends HTMLElement {
               ${i.items
                 .map(
                   (i) =>
-                    `<li><a class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16" style="border-radius: 4px; text-decoration: none;" target="_self">${i.title}</a></li>`
+                    `<li><a href="${
+                      i.href
+                    }" class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16 my-2 ${
+                      document.location.href.includes(i.href)
+                        ? 'bg-gray-200'
+                        : ''
+                    }" style="border-radius: 4px; text-decoration: none;" target="_self">${
+                      i.title
+                    }</a></li>`
                 )
                 .join('')}
             </ul>
