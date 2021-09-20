@@ -17,3 +17,8 @@ Then go into the package you wish to work on and run:
 ```
 npm run dev
 ```
+
+## Adding new components
+
+1. Ensure you are running >= Node v16 NPM v7
+1. Run `npm init -w ./packages/<package name>` and fill in the questions

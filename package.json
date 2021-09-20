@@ -2,6 +2,7 @@
   "name": "@finn-no/fabric-common",
   "workspaces": [
     "packages/navigation",
-    "packages/sidebar"
+    "packages/sidebar",
+    "packages/asset-links"
   ]
 }
