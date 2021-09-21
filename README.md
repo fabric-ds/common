@@ -22,3 +22,9 @@ npm run dev
 
 1. Ensure you are running >= Node v16 NPM v7
 1. Run `npm init -w ./packages/<package name>` and fill in the questions
+
+## Publishing components
+
+1. Ensure you are in the root of the project
+1. Run `npm version -w packages/<package name>` to version a package.
+1. Run `npm publish -ws` to publish all packages. Run `npm publish -w packages/<package name>` to publish a single package.
