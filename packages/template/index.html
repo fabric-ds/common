@@ -12,81 +12,22 @@
 </head>
 
 <body>
-    <style>
-        .doc-logo {
-            grid-area: logo;
-        }
-
-        .doc-main-menu {
-            grid-area: sitemenu;
-        }
-
-        .doc-left-menu {
-            grid-area: sidebar;
-        }
-
-        .doc-main {
-            grid-area: main;
-        }
-
-        .doc-grid {
-            display: block;
-        }
-
-        @media screen and (min-width:990px) {
-            .doc-grid {
-                display: grid;
-                grid-template-columns: 320px 1fr;
-                grid-template-rows: auto 1fr;
-                grid-template-areas:
-                    "logo sitemenu"
-                    "sidebar main"
-            }
-        }
-
-
-        .doc-front-page-banner {
-            background: linear-gradient(94.46deg, #0D55C8 3.76%, #1593E9 99.18%);
-            padding: 60px 0px;
-        }
-    </style>
     <!-- Link script files here -->
     <script src="../navigation/index.js"></script>
     <script src="../sidebar/index.js"></script>
+    <script src="index.js"></script>
 
-    <main class="doc-grid min-h-screen">
-        <div class="doc-logo border-b">
-            <h1 class="h4 mb-0 px-32 py-16">Fabric ------</h1>
+    <f-docs-template>
+        <h1 slot="logo" class="h4 mb-0 px-32 py-16">Fabric ------</h1>
+        <div slot="banner" class="mx-auto p-32" style="max-width:1024px">
+            <h1 class="text-white"><span class="h3">Welcome to</span> <br>Fabric Design system</h1>
         </div>
-        <nav class="doc-main-menu border-b">
-            <f-docs-navigation></f-docs-navigation>
-        </nav>
-        <nav class="doc-left-menu bg-gray-50 p-32 border-r">
-            <f-docs-sidebar>
-                <f-docs-sidebar-section>
-                  <h3 slot="title">Design</h3>
-                  <ul slot="items">
-                    <li><a href="#">Fabric</a></li>
-                    <li><a href="#">Foundations</a></li>
-                    <li><a href="#">Components</a></li>
-                    <li><a href="#">Resources</a></li>
-                  </ul>
-                </f-docs-sidebar-section>
-              </f-docs-sidebar>
-        </nav>
-        <section class="doc-main">
-            <div class="doc-front-page-banner">
-                <div class="mx-auto p-32" style="max-width:1024px">
-                    <h1 class="text-white"><span class="h3">Welcome to</span> <br>Fabric Design system</h1>
-                </div>
-            </div>
-
-
-            <div class="mx-auto p-32" style="max-width:1024px">
-                El Contento
-            </div>
-        </section>
-    </main>
+        <f-docs-navigation slot="navigation"></f-docs-navigation>
+        <f-docs-sidebar slot="sidebar"></f-docs-sidebar>
+        <div slot="content">
+            El Contento
+        </div>
+    </f-docs-template>
 
 </body>
 

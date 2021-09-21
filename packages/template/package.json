@@ -1,0 +1,23 @@
+{
+  "name": "@finn-no/fabric-docs-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finn-no/fabric-common.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finn-no/fabric-common/issues"
+  },
+  "homepage": "https://github.com/finn-no/fabric-common#readme"
+}
