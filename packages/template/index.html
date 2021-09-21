@@ -13,8 +13,6 @@
 
 <body>
     <!-- Link script files here -->
-    <script src="../navigation/index.js"></script>
-    <script src="../sidebar/index.js"></script>
     <script src="index.js"></script>
 
     <f-docs-template>
@@ -22,11 +20,9 @@
         <div slot="banner" class="mx-auto p-32" style="max-width:1024px">
             <h1 class="text-white"><span class="h3">Welcome to</span> <br>Fabric Design system</h1>
         </div>
-        <f-docs-navigation slot="navigation"></f-docs-navigation>
-        <f-docs-sidebar slot="sidebar"></f-docs-sidebar>
-        <div slot="content">
-            El Contento
-        </div>
+        <div slot="navigation"></div>
+        <div slot="sidebar"></div>
+        <div slot="content">El Contento</div>
     </f-docs-template>
 
 </body>
