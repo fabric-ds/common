@@ -10,7 +10,7 @@ class FabricDocsSidebar extends HTMLElement {
           type="text/css"
           href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
       />
-      <section style="width: 250px;" class="bg-gray-50 h-screen p-20">
+      <section style="width: 250px;" class="doc-left-menu bg-gray-50 h-screen p-20 border-r">
         <div class="input px-6">
           <input type="text" placeholder="Search">
         </div>
