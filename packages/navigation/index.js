@@ -33,7 +33,7 @@ class FabricDocsNavigation extends HTMLElement {
             type="text/css"
             href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
         />
-        <nav class="flex border-b" aria-label="Topp">
+        <nav class="doc-main-menu flex border-b" aria-label="Topp">
           <div class="flex items-center pl-16" style="width: 250px;">
             <a href="https://opensource.finn.no/fabric-design/" aria-current="${document.location.href.includes('https://opensource.finn.no/fabric-design/') ? 'true' : 'false'}" aria-label="Fabric Design forside" title="Fabric Design forside">
               <svg width="92" height="32" viewBox="0 0 92 32" fill="none" xmlns="http://www.w3.org/2000/svg">
