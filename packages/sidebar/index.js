@@ -57,11 +57,9 @@ class FabricDocsSidebar extends HTMLElement {
         }
 
         return `<li class="my-4">
-          <a id="${id}" ${
+          <a id="${id}" aria-label="${i.title}" ${
           i.open ? 'aria-controls="' + id + '-child-list"' : ''
-        } tabindex="${
-          i.open ? -1 : 0
-        }" class="w-full inline-flex align-center hover:bg-gray-200 text-14 text-gray-700 font-bold py-6 px-8" style="border-radius: 4px; text-decoration: none;" role="link" aria-expanded="${
+        } tabindex="0" class="w-full inline-flex align-center hover:bg-gray-200 text-14 text-gray-700 font-bold py-6 px-8" style="border-radius: 4px; text-decoration: none;" role="link" aria-expanded="${
           i.open
         }" target="_self">${i.title}</a>
           ${
@@ -74,7 +72,9 @@ class FabricDocsSidebar extends HTMLElement {
               ${i.items
                 .map(
                   (i) =>
-                    `<li><a href="${
+                    `<li><a aria-label="${i.title}" aria-current="${
+                      document.location.href.includes(i.href) ? 'true' : 'false'
+                    }" title="${i.title}" href="${
                       i.href
                     }" class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16 my-2 ${
                       document.location.href.includes(i.href)
