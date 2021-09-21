@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/navigation",
     "packages/sidebar",
-    "packages/asset-links"
+    "packages/asset-links",
+    "packages/template"
   ]
 }
