@@ -43,7 +43,7 @@ class FabricDocsSidebar extends HTMLElement {
 
   render(first) {
     this.shadowRoot.querySelector('#fabric-docs-sidebar').innerHTML = `
-    <h3 class="text-12 text-gray-500 mt-12 px-8" style="font-weight: 100;">${
+    <h3 class="text-12 text-gray-500 mt-20 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
     }</h3>
     <ul>
