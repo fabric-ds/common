@@ -36,7 +36,7 @@ class FabricDocsTemplate extends HTMLElement {
             padding: 60px 0px;
         }
       </style>
-      <f-docs-navigation slot="navigation"></f-docs-navigation>
+      <slot name="navigation"></slot>
       <main class="doc-grid min-h-screen">
         <slot name="sidebar"></slot>
         <section class="doc-main">
