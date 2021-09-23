@@ -1,3 +1,5 @@
+import '../navigation/index.js';
+import '../sidebar/index.js';
 class FabricDocsTemplate extends HTMLElement {
   constructor() {
     super();
@@ -36,9 +38,11 @@ class FabricDocsTemplate extends HTMLElement {
             padding: 60px 0px;
         }
       </style>
-      <slot name="navigation"></slot>
+      <f-docs-navigation></f-docs-navigation>
       <main class="doc-grid min-h-screen">
-        <slot name="sidebar"></slot>
+        <f-docs-sidebar><script type="application/json">${document.querySelector(
+          '[data-for="sidebar"]'
+        )}</script></f-docs-sidebar>
         <section class="doc-main">
           <div class="doc-front-page-banner">
             <slot name="banner"></slot>
@@ -53,6 +57,8 @@ class FabricDocsTemplate extends HTMLElement {
     this.attachShadow({ mode: 'open' }).appendChild(
       fabricStylesTemplate.content
     );
+
+    document.querySelector('[data-for="sidebar"]').remove();
   }
 }
 

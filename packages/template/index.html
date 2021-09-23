@@ -19,55 +19,50 @@
 
   <body>
     <!-- Link script files here -->
-    <script src="index.js"></script>
-    <script src="../navigation/index.js" defer></script>
-    <script src="../sidebar/index.js" defer></script>
+    <script src="index.js" type="module"></script>
 
     <f-docs-template>
-      <f-docs-navigation slot="navigation"></f-docs-navigation>
-      <f-docs-sidebar slot="sidebar">
-        <script type="application/json">
-          {
-            "category": "Design",
-            "items": [
-              {
-                "title": "Fabric",
-                "open": false,
-                "items": [
-                  {
-                    "title": "Principles",
-                    "href": "?page=principles"
-                  },
-                  {
-                    "title": "What's new",
-                    "href": "?page=new"
-                  },
-                  {
-                    "title": "Getting started",
-                    "href": "?page=started"
-                  }
-                ]
-              },
-              {
-                "title": "Foundations",
-                "open": false,
-                "items": [
-                  {
-                    "title": "Test",
-                    "href": "?page=test"
-                  },
-                  {
-                    "title": "Something else",
-                    "href": "?page=else"
-                  }
-                ]
-              },
-              { "title": "Components", "open": false },
-              { "title": "Resources", "open": false }
-            ]
-          }
-        </script>
-      </f-docs-sidebar>
+      <script data-for="sidebar" type="application/json">
+        {
+          "category": "Design",
+          "items": [
+            {
+              "title": "Fabric",
+              "open": false,
+              "items": [
+                {
+                  "title": "Principles",
+                  "href": "?page=principles"
+                },
+                {
+                  "title": "What's new",
+                  "href": "?page=new"
+                },
+                {
+                  "title": "Getting started",
+                  "href": "?page=started"
+                }
+              ]
+            },
+            {
+              "title": "Foundations",
+              "open": false,
+              "items": [
+                {
+                  "title": "Test",
+                  "href": "?page=test"
+                },
+                {
+                  "title": "Something else",
+                  "href": "?page=else"
+                }
+              ]
+            },
+            { "title": "Components", "open": false },
+            { "title": "Resources", "open": false }
+          ]
+        }
+      </script>
       <div slot="banner" class="mx-auto p-32" style="max-width: 1024px">
         <h1 class="text-white">
           <span class="h3">Welcome to</span> <br />Fabric Design system
