@@ -1,4 +1,9 @@
 {
   "name": "@finn-no/fabric-common",
-  "workspaces": ["./packages/*"]
+  "workspaces": [
+    "./packages/*"
+  ],
+  "scripts": {
+    "dev": "npx http-server packages"
+  }
 }
