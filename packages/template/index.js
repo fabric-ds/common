@@ -1,5 +1,6 @@
 import '../navigation/index.js';
 import '../sidebar/index.js';
+
 class FabricDocsTemplate extends HTMLElement {
   constructor() {
     super();
@@ -40,9 +41,9 @@ class FabricDocsTemplate extends HTMLElement {
       </style>
       <f-docs-navigation></f-docs-navigation>
       <main class="doc-grid min-h-screen">
-        <f-docs-sidebar><script type="application/json">${document.querySelector(
+        <f-docs-sidebar>${document.querySelector(
           '[data-for="sidebar"]'
-        )}</script></f-docs-sidebar>
+        )}</f-docs-sidebar>
         <section class="doc-main">
           <div class="doc-front-page-banner">
             <slot name="banner"></slot>
