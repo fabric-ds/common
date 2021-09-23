@@ -5,5 +5,8 @@
     "packages/sidebar",
     "packages/asset-links",
     "packages/template"
-  ]
+  ],
+  "scripts": {
+    "dev": "npx http-server packages"
+  }
 }
