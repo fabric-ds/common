@@ -5,5 +5,10 @@
     "packages/sidebar",
     "packages/asset-links",
     "packages/template"
-  ]
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cp packages/asset-links/index.js dist/asset-links.js && cp packages/navigation/index.js dist/navigation.js && cp packages/sidebar/index.js dist/sidebar.js && cp packages/template/index.js dist/template.js",
+    "eik:login": "npx @eik/cli login",
+    "eik:publish": "npm run build && npx @eik/cli publish"
+  }
 }
