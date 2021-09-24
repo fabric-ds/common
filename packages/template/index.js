@@ -45,12 +45,16 @@ class FabricDocsTemplate extends HTMLElement {
           '[data-for="sidebar"]'
         )}</f-docs-sidebar>
         <section class="doc-main">
-          <div class="doc-front-page-banner">
-            <slot name="banner"></slot>
-          </div>
-          <div class="mx-auto p-32" style="max-width:1024px">
-            <slot name="content"></slot>
-          </div>
+          ${
+            !!document.querySelector(['[slot="banner"]'])
+              ? '<div class="doc-front-page-banner"><slot name="banner"></slot></div>'
+              : ''
+          }
+          ${
+            !!document.querySelector(['[slot="content"]'])
+              ? '<div class="mx-auto p-32" style="max-width:1024px"><slot name="content"></slot></div>'
+              : ''
+          }
         </section>
       </main>
     `;
