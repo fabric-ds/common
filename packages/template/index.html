@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <!--  -->
-    <link rel="stylesheet" type="text/css" href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css" /> 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+    />
     <title>Fabric ----</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Link script files here -->
-    <script src="index.js"></script>
-    <script src="../navigation/index.js"></script>
-    <script src="../sidebar/index.js"></script>
+    <script src="index.js" type="module"></script>
 
     <f-docs-template>
-        <h1 slot="logo" class="h4 mb-0 px-32 py-16">Fabric ------</h1>
-        <div slot="banner" class="mx-auto p-32" style="max-width:1024px">
-            <h1 class="text-white"><span class="h3">Welcome to</span> <br>Fabric Design system</h1>
-        </div>
-        <f-docs-navigation slot="navigation"></f-docs-navigation>
-        <f-docs-sidebar slot="sidebar"></f-docs-sidebar>
-        <div slot="content">El Contento</div>
+      <script data-for="sidebar" type="application/json">
+        {
+          "category": "Design",
+          "items": [
+            {
+              "title": "Fabric",
+              "open": false,
+              "items": [
+                {
+                  "title": "Principles",
+                  "href": "?page=principles"
+                },
+                {
+                  "title": "What's new",
+                  "href": "?page=new"
+                },
+                {
+                  "title": "Getting started",
+                  "href": "?page=started"
+                }
+              ]
+            },
+            {
+              "title": "Foundations",
+              "open": false,
+              "items": [
+                {
+                  "title": "Test",
+                  "href": "?page=test"
+                },
+                {
+                  "title": "Something else",
+                  "href": "?page=else"
+                }
+              ]
+            },
+            { "title": "Components", "open": false },
+            { "title": "Resources", "open": false }
+          ]
+        }
+      </script>
+      <div slot="banner" class="mx-auto p-32" style="max-width: 1024px">
+        <h1 class="text-white">
+          <span class="h3">Welcome to</span> <br />Fabric Design system
+        </h1>
+      </div>
+      <div slot="content">El Contento</div>
     </f-docs-template>
-
-</body>
-
+  </body>
 </html>

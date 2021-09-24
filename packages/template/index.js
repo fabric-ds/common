@@ -1,8 +1,11 @@
+import '../navigation/index.js';
+import '../sidebar/index.js';
+
 class FabricDocsTemplate extends HTMLElement {
   constructor() {
     super();
 
-    const fabricStylesTemplate = document.createElement("template");
+    const fabricStylesTemplate = document.createElement('template');
     fabricStylesTemplate.innerHTML = `
       <link
           rel="stylesheet"
@@ -11,9 +14,6 @@ class FabricDocsTemplate extends HTMLElement {
       />
       <style>
         :host { display: block; }
-        .doc-logo {
-            grid-area: logo;
-        }
         .doc-main-menu {
             grid-area: sitemenu;
         }
@@ -29,11 +29,9 @@ class FabricDocsTemplate extends HTMLElement {
         @media screen and (min-width:990px) {
             .doc-grid {
                 display: grid;
-                grid-template-columns: 320px 1fr;
+                grid-template-columns: 250px 1fr;
                 grid-template-rows: auto 1fr;
-                grid-template-areas:
-                    "logo sitemenu"
-                    "sidebar main"
+                grid-template-areas: "sidebar main"
             }
         }
         .doc-front-page-banner {
@@ -41,16 +39,11 @@ class FabricDocsTemplate extends HTMLElement {
             padding: 60px 0px;
         }
       </style>
+      <f-docs-navigation></f-docs-navigation>
       <main class="doc-grid min-h-screen">
-        <div class="doc-logo border-b">
-          <slot name="logo"></slot>
-        </div>
-        <nav class="doc-main-menu border-b">
-          <slot name="navigation"></slot>
-        </nav>
-        <nav class="doc-left-menu bg-gray-50 p-32 border-r">
-          <slot name="sidebar"></slot>
-        </nav>
+        <f-docs-sidebar>${document.querySelector(
+          '[data-for="sidebar"]'
+        )}</f-docs-sidebar>
         <section class="doc-main">
           <div class="doc-front-page-banner">
             <slot name="banner"></slot>
@@ -62,12 +55,14 @@ class FabricDocsTemplate extends HTMLElement {
       </main>
     `;
 
-    this.attachShadow({ mode: "open" }).appendChild(
+    this.attachShadow({ mode: 'open' }).appendChild(
       fabricStylesTemplate.content
     );
+
+    document.querySelector('[data-for="sidebar"]').remove();
   }
 }
 
-if (!customElements.get("f-docs-template")) {
-  customElements.define("f-docs-template", FabricDocsTemplate);
+if (!customElements.get('f-docs-template')) {
+  customElements.define('f-docs-template', FabricDocsTemplate);
 }

@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/finn-no/fabric-common/issues"
   },
-  "homepage": "https://github.com/finn-no/fabric-common#readme"
+  "homepage": "https://github.com/finn-no/fabric-common#readme",
+  "dependencies": {
+    "@finn-no/fabric-docs-navigation": "^1.0.0"
+  }
 }

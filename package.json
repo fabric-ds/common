@@ -1,10 +1,7 @@
 {
   "name": "@finn-no/fabric-common",
   "workspaces": [
-    "packages/navigation",
-    "packages/sidebar",
-    "packages/asset-links",
-    "packages/template"
+    "./packages/*"
   ],
   "scripts": {
     "dev": "npx http-server packages"
