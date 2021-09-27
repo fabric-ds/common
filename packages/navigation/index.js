@@ -4,28 +4,28 @@ class FabricDocsNavigation extends HTMLElement {
 
     const sites = [
       {
-        name: "Design",
-        href: "https://opensource.finn.no/fabric-design/",
+        name: 'Design',
+        href: 'https://fabric-ds.github.io/design/',
       },
       {
-        name: "CSS",
-        href: "https://opensource.finn.no/fabric-css/",
+        name: 'CSS',
+        href: 'https://fabric-ds.github.io/css/',
       },
       {
-        name: "React",
-        href: "https://opensource.finn.no/fabric-react/#/",
+        name: 'React',
+        href: 'https://fabric-ds.github.io/react/#/',
       },
       {
-        name: "Vue",
-        href: "https://opensource.finn.no/fabric-vue/",
+        name: 'Vue',
+        href: 'https://fabric-ds.github.io/vue/',
       },
       {
-        name: "Elements",
-        href: "https://opensource.finn.no/fabric-elements/",
+        name: 'Elements',
+        href: 'https://fabric-ds.github.io/elements/',
       },
-    ]
+    ];
 
-    const fabricStylesTemplate = document.createElement("template");
+    const fabricStylesTemplate = document.createElement('template');
     fabricStylesTemplate.innerHTML = `
         <style>:host { display: block; }</style>
         <link
@@ -33,9 +33,23 @@ class FabricDocsNavigation extends HTMLElement {
             type="text/css"
             href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
         />
-        <nav class="doc-main-menu flex border-b" aria-label="Topp">
-          <div class="flex items-center pl-16" style="width: 250px;">
-            <a href="https://opensource.finn.no/fabric-design/" aria-current="${document.location.href.includes('https://opensource.finn.no/fabric-design/') ? 'true' : 'false'}" aria-label="Fabric Design forside" title="Fabric Design forside">
+        <nav class="doc-main-menu border-b flex static bg-white fixed left-0 right-0 z-10" aria-label="Topp">
+          <button id="hamburger-menu" class="flex lg:hidden p-12">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 1.50299C1.83579 1.50299 1.5 1.83878 1.5 2.25299V3.75299C1.5 4.1672 1.83579 4.50299 2.25 4.50299H21.75C22.1642 4.50299 22.5 4.1672 22.5 3.75299V2.25299C22.5 1.83878 22.1642 1.50299 21.75 1.50299H2.25ZM0 2.25299C0 1.01035 1.00736 0.00299072 2.25 0.00299072H21.75C22.9926 0.00299072 24 1.01035 24 2.25299V3.75299C24 4.99563 22.9926 6.00299 21.75 6.00299H2.25C1.00736 6.00299 0 4.99563 0 3.75299V2.25299ZM2.25 10.503C1.83579 10.503 1.5 10.8388 1.5 11.253V12.753C1.5 13.1672 1.83579 13.503 2.25 13.503H21.75C22.1642 13.503 22.5 13.1672 22.5 12.753V11.253C22.5 10.8388 22.1642 10.503 21.75 10.503H2.25ZM0 11.253C0 10.0104 1.00736 9.00299 2.25 9.00299H21.75C22.9926 9.00299 24 10.0104 24 11.253V12.753C24 13.9956 22.9926 15.003 21.75 15.003H2.25C1.00736 15.003 0 13.9956 0 12.753V11.253ZM1.5 20.253C1.5 19.8388 1.83579 19.503 2.25 19.503H21.75C22.1642 19.503 22.5 19.8388 22.5 20.253V21.753C22.5 22.1672 22.1642 22.503 21.75 22.503H2.25C1.83579 22.503 1.5 22.1672 1.5 21.753V20.253ZM2.25 18.003C1.00736 18.003 0 19.0103 0 20.253V21.753C0 22.9956 1.00736 24.003 2.25 24.003H21.75C22.9926 24.003 24 22.9956 24 21.753V20.253C24 19.0103 22.9926 18.003 21.75 18.003H2.25Z" fill="#474445"/>
+              </g>
+              <defs>
+                <clipPath>
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <div class="hidden lg:flex items-center pl-16" style="width: 250px;">
+            <a href="${sites[0].href}/" aria-current="${
+      document.location.href.includes(sites[0].href) ? 'true' : 'false'
+    }" aria-label="Fabric Design forside" title="Fabric Design forside">
               <svg width="92" height="32" viewBox="0 0 92 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <title>Fabric Docs</title>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.252 2.08777H3.02282C2.50963 2.08777 2.09224 2.5045 2.09224 3.01664V28.9834C2.09224 29.4955 2.50963 29.9123 3.02282 29.9123H29.9738V20.7711C29.9738 10.469 21.5753 2.08777 11.252 2.08777Z" fill="#0063FB"/>
@@ -45,20 +59,40 @@ class FabricDocsNavigation extends HTMLElement {
               </svg>
             </a>
           </div>
-          <ul class="flex items-center mb-0">
-          ${sites.map(s => (
-            `<li><a href="${s.href}" class="${document.location.href.includes(s.href) ? 'border-t-4 border-blue-500' : ''} inline-block text-gray-900 px-16 py-16" aria-current="${document.location.href.includes(s.href) ? 'true' : 'false'}" aria-label="Fabric ${s.name}" title="Fabric ${s.name}" rel="nofollow">${s.name}</a></li>`
-          )).join('')}
+          <ul class="hidden lg:flex items-center mb-0">
+          ${sites
+            .map(
+              (s) =>
+                `<li><a href="${s.href}" class="${
+                  document.location.href.includes(s.href)
+                    ? 'border-t-4 border-blue-500'
+                    : ''
+                } inline-block text-gray-900 px-16 py-16" aria-current="${
+                  document.location.href.includes(s.href) ? 'true' : 'false'
+                }" aria-label="Fabric ${s.name}" title="Fabric ${
+                  s.name
+                }" rel="nofollow">${s.name}</a></li>`
+            )
+            .join('')}
           </ul>
         </nav>
     `;
 
-    this.attachShadow({ mode: "open" }).appendChild(
+    this.attachShadow({ mode: 'open' }).appendChild(
       fabricStylesTemplate.content
     );
+
+    const button = this.shadowRoot.querySelector('#hamburger-menu');
+    const sidebar = document
+      .querySelector('f-docs-template')
+      .shadowRoot.querySelector('f-docs-sidebar');
+
+    button.addEventListener('click', () => {
+      sidebar.dispatchEvent(new Event('hamburger-click'));
+    });
   }
 }
 
-if (!customElements.get("f-docs-navigation")) {
-  customElements.define("f-docs-navigation", FabricDocsNavigation);
+if (!customElements.get('f-docs-navigation')) {
+  customElements.define('f-docs-navigation', FabricDocsNavigation);
 }
