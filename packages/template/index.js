@@ -1,5 +1,6 @@
 import '../navigation/index.js';
 import '../sidebar/index.js';
+import '../footer/index.js';
 
 class FabricDocsTemplate extends HTMLElement {
   constructor() {
@@ -25,6 +26,8 @@ class FabricDocsTemplate extends HTMLElement {
         }
         .doc-grid {
             display: block;
+            position: relative;
+            top: 49px;
         }
         @media screen and (min-width:990px) {
             .doc-grid {
@@ -32,6 +35,9 @@ class FabricDocsTemplate extends HTMLElement {
                 grid-template-columns: 250px 1fr;
                 grid-template-rows: auto 1fr;
                 grid-template-areas: "sidebar main"
+            }
+            .doc-grid {
+                top: 55px;
             }
         }
         .doc-front-page-banner {
@@ -52,7 +58,16 @@ class FabricDocsTemplate extends HTMLElement {
           }
           ${
             !!document.querySelector(['[slot="content"]'])
-              ? '<div class="mx-auto p-32" style="max-width:1024px"><slot name="content"></slot></div>'
+              ? `<div class="mx-auto p-32" style="max-width:1024px">
+                  <slot name="content"></slot>
+                  ${
+                    document.querySelector('[data-for="footer"]')
+                      ? `<f-docs-footer>${document.querySelector(
+                          '[data-for="footer"]'
+                        )}</f-docs-footer>`
+                      : ''
+                  }
+                </div>`
               : ''
           }
         </section>
@@ -64,6 +79,7 @@ class FabricDocsTemplate extends HTMLElement {
     );
 
     document.querySelector('[data-for="sidebar"]').remove();
+    document.querySelector('[data-for="footer"]').remove();
   }
 }
 
