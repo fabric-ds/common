@@ -31,11 +31,11 @@ class FabricDocsSidebar extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
       <div id="backdrop" class="backdrop fixed inset-0 hidden"></div>
       <section id="sidebar" style="width: 250px;" class="hidden overflow-scroll lg:block doc-left-menu bg-gray-50 h-screen fixed sidebar">
-        <nav id="fabric-docs-sidebar" aria-orientation="vertical"></nav>
+        <nav id="docs-sidebar" aria-orientation="vertical"></nav>
       </section>
   `;
 
@@ -92,7 +92,7 @@ class FabricDocsSidebar extends HTMLElement {
   }
 
   render(first) {
-    this.shadowRoot.querySelector('#fabric-docs-sidebar').innerHTML = `
+    this.shadowRoot.querySelector('#docs-sidebar').innerHTML = `
     <h3 class="text-12 text-gray-500 mt-10 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
     }</h3>

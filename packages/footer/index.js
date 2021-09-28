@@ -8,11 +8,11 @@ class FabricDocsFooter extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
       <footer aria-orientation="horizontal" class="mt-32 text-12 text-gray-600">
         <hr class="mb-40" />
-        <div id="fabric-docs-footer" class="grid grid-flow-col justify-end gap-24"></div>
+        <div id="docs-footer" class="grid grid-flow-col justify-end gap-24"></div>
       </footer>
     `;
 
@@ -33,7 +33,7 @@ class FabricDocsFooter extends HTMLElement {
     const linkClass =
       'grid gap-6 grid-flow-col justify-start items-center  link link--block';
 
-    this.shadowRoot.querySelector('#fabric-docs-footer').innerHTML += `
+    this.shadowRoot.querySelector('#docs-footer').innerHTML += `
     ${
       this.entries.slack
         ? `<a class="grid gap-6 grid-flow-col justify-start items-center  link link--block" href="${this.entries.slack.href}" title="Slack channel" style="color: inherit;">

@@ -1,5 +1,5 @@
 {
-  "name": "@fabric-ds/fabric-common",
+  "name": "@fabric-ds/common",
   "workspaces": [
     "./packages/*"
   ],
@@ -7,7 +7,7 @@
     "build": "./build.sh",
     "eik:alias": "npx @eik/cli pkg-alias",
     "eik:login": "npx @eik/cli login",
-    "eik:publish": "npm run build && npx @eik/cli publish && npm run alias",
+    "eik:publish": "npm run build && npx @eik/cli publish && npm run eik:alias",
     "dev": "npx http-server packages"
   }
 }

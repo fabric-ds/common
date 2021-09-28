@@ -11,7 +11,7 @@ class FabricDocsTemplate extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
       <style>
         :host { display: block; }
@@ -58,7 +58,7 @@ class FabricDocsTemplate extends HTMLElement {
           }
           ${
             !!document.querySelector(['[slot="content"]'])
-              ? `<div class="mx-auto p-32" style="max-width:1024px">
+              ? `<div class="mx-auto p-12 md:p-32" style="max-width:1024px">
                   <slot name="content"></slot>
                   ${
                     document.querySelector('[data-for="footer"]')

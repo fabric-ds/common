@@ -1,5 +1,5 @@
 {
-  "name": "@fabric-ds/fabric-docs-template",
+  "name": "@fabric-ds/docs-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/fabric-ds/fabric-common#readme",
   "dependencies": {
-    "@fabric-ds/fabric-docs-navigation": "^1.0.0"
+    "@fabric-ds/docs-navigation": "^1.0.0"
   }
 }

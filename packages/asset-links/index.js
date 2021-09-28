@@ -84,7 +84,7 @@ class FabricDocsAssetLinks extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
       <div class="my-16 max-w-max">
         ${assetLinksMarkup}

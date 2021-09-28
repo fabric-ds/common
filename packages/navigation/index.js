@@ -31,7 +31,7 @@ class FabricDocsNavigation extends HTMLElement {
         <link
             rel="stylesheet"
             type="text/css"
-            href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
+            href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
         />
         <nav class="doc-main-menu border-b flex static bg-white fixed left-0 right-0 z-10" aria-label="Topp">
           <button id="hamburger-menu" class="flex lg:hidden p-12">
