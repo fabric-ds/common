@@ -44,24 +44,24 @@ class FabricDocsAssetLinks extends HTMLElement {
 
     let urls = [];
     try {
-      urls = JSON.parse(this.querySelector("script").innerText);
+      urls = JSON.parse(this.querySelector('script').innerText);
     } catch (e) {
       // noop
     }
 
-    let assetLinksMarkup = "";
+    let assetLinksMarkup = '';
     for (const url of urls) {
-      let logo = "";
-      let text = "";
+      let logo = '';
+      let text = '';
 
-      if (url.includes("figma.com")) {
-        text = "View in Figma";
+      if (url.includes('figma.com')) {
+        text = 'View in Figma';
         logo = figmaLogo();
-      } else if (url.includes("fabric-react")) {
-        text = "View in Fabric React";
+      } else if (url.includes('fabric-react')) {
+        text = 'View in Fabric React';
         logo = reactLogo();
-      } else if (url.includes("fabric-vue")) {
-        text = "View in Fabric Vue";
+      } else if (url.includes('fabric-vue')) {
+        text = 'View in Fabric Vue';
         logo = vueLogo();
       }
 
@@ -78,25 +78,25 @@ class FabricDocsAssetLinks extends HTMLElement {
       `;
     }
 
-    const fabricStylesTemplate = document.createElement("template");
+    const fabricStylesTemplate = document.createElement('template');
     fabricStylesTemplate.innerHTML = `
       <style>:host { display: block; }</style>
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
       />
       <div class="my-16 max-w-max">
         ${assetLinksMarkup}
       </div>
     `;
 
-    this.attachShadow({ mode: "open" }).appendChild(
+    this.attachShadow({ mode: 'open' }).appendChild(
       fabricStylesTemplate.content
     );
   }
 }
 
-if (!customElements.get("f-docs-asset-links")) {
-  customElements.define("f-docs-asset-links", FabricDocsAssetLinks);
+if (!customElements.get('f-docs-asset-links')) {
+  customElements.define('f-docs-asset-links', FabricDocsAssetLinks);
 }

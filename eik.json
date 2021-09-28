@@ -1,5 +1,5 @@
 {
-  "name": "@finn-no/fabric-common",
+  "name": "@fabric-ds/fabric-common",
   "version": "1.0.1",
   "server": "https://assets.finn.no",
   "files": "dist"

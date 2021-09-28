@@ -8,7 +8,7 @@ class FabricDocsFooter extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
       />
       <footer aria-orientation="horizontal" class="mt-32 text-12 text-gray-600">
         <hr class="mb-40" />
