@@ -11,7 +11,7 @@ class FabricDocsTemplate extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
       />
       <style>
         :host { display: block; }

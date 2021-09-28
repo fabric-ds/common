@@ -31,7 +31,7 @@ class FabricDocsSidebar extends HTMLElement {
       <link
           rel="stylesheet"
           type="text/css"
-          href="https://assets.finn.no/pkg/@finn-no/fabric-css/v0/fabric.min.css"
+          href="https://assets.finn.no/pkg/@fabric-ds/fabric-css/v0/fabric.min.css"
       />
       <div id="backdrop" class="backdrop fixed inset-0 hidden"></div>
       <section id="sidebar" style="width: 250px;" class="hidden overflow-scroll lg:block doc-left-menu bg-gray-50 h-screen fixed sidebar">

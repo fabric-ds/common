@@ -1,5 +1,5 @@
 {
-  "name": "@finn-no/fabric-common",
+  "name": "@fabric-ds/fabric-common",
   "workspaces": [
     "./packages/*"
   ],

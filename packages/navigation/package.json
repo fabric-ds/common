@@ -1,5 +1,5 @@
 {
-  "name": "@finn-no/fabric-docs-navigation",
+  "name": "@fabric-ds/fabric-docs-navigation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finn-no/fabric-common.git"
+    "url": "git+https://github.com/fabric-ds/fabric-common.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/finn-no/fabric-common/issues"
+    "url": "https://github.com/fabric-ds/fabric-common/issues"
   },
-  "homepage": "https://github.com/finn-no/fabric-common#readme"
+  "homepage": "https://github.com/fabric-ds/fabric-common#readme"
 }
