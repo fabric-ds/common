@@ -5,23 +5,23 @@ class FabricDocsNavigation extends HTMLElement {
     const sites = [
       {
         name: 'Design',
-        href: 'https://fabric-ds.github.io/design/',
+        href: '/design',
       },
       {
         name: 'CSS',
-        href: 'https://fabric-ds.github.io/css/',
+        href: '/css',
       },
       {
         name: 'React',
-        href: 'https://fabric-ds.github.io/react/#/',
+        href: '/react',
       },
       {
         name: 'Vue',
-        href: 'https://fabric-ds.github.io/vue/',
+        href: '/vue',
       },
       {
         name: 'Elements',
-        href: 'https://fabric-ds.github.io/elements/',
+        href: '/elements',
       },
     ];
 

@@ -20,6 +20,8 @@ class FabricDocsFooter extends HTMLElement {
       fabricStylesTemplate.content
     );
 
+    this.innerHTML = '';
+
     this.entries = JSON.parse(
       document.querySelector('[data-for="footer"]').textContent
     );

@@ -79,6 +79,7 @@ class FabricDocsTemplate extends HTMLElement {
     );
 
     document.querySelector('[data-for="sidebar"]').remove();
+    document.querySelector('[data-for="footer"]').remove();
   }
 }
 
