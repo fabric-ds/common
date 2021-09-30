@@ -48,6 +48,7 @@ class FabricDocsSidebar extends HTMLElement {
       document.querySelector('body').classList.toggle('overflow-hidden');
       this.shadowRoot.querySelector('#sidebar').classList.toggle('hidden');
       this.shadowRoot.querySelector('#backdrop').classList.toggle('hidden');
+      this.shadowRoot.querySelector('#mobilerepos').classList.toggle('hidden');
     };
 
     this.addEventListener('hamburger-click', toggleMenu);
@@ -58,8 +59,10 @@ class FabricDocsSidebar extends HTMLElement {
     // Remove backdrop when resizing from mobile to desktop
     window.addEventListener('resize', () => {
       const backdrop = this.shadowRoot.querySelector('#backdrop');
+      const repos = this.shadowRoot.querySelector('#mobilerepos');
       if (window.innerWidth >= 990 && !backdrop.classList.contains('hidden')) {
         backdrop.classList.toggle('hidden');
+        repos.classList.toggle('hidden');
       }
     });
 
@@ -71,18 +74,44 @@ class FabricDocsSidebar extends HTMLElement {
     this.innerHTML = '';
 
     // Ensure menu is open on refresh
+    // TODO: Simplify & make more efficient
+    function oneChildOpen(obj) {
+      for (const key in obj) {
+        const parent = obj[key];
+
+        for (const key in parent) {
+          const child = parent[key];
+
+          for (const key in child) {
+            const subchild = child[key];
+
+            for (const key in subchild) {
+              if (document.location.href.includes(subchild[key].href))
+                return true;
+            }
+          }
+        }
+      }
+    }
+
     this.entries.items = this.entries.items.map((i) => ({
       ...i,
-      open: !!i.items?.filter((i) => document.location.href.includes(i.href))[0]
-        ? !i.open
-        : i.open,
+      open:
+        !!i.items?.filter((i) => document.location.href.includes(i.href))[0] ||
+        oneChildOpen(i)
+          ? i.open
+            ? i.open
+            : !i.open
+          : i.open,
       items: i.hasOwnProperty('items')
         ? i.items.map((i) => ({
             ...i,
             open: !!i.items?.filter((i) =>
               document.location.href.includes(i.href)
             )[0]
-              ? !i.open
+              ? i.open
+                ? i.open
+                : !i.open
               : i.open,
           }))
         : undefined,
@@ -92,6 +121,29 @@ class FabricDocsSidebar extends HTMLElement {
   }
 
   render(first) {
+    const sites = [
+      {
+        name: 'Design',
+        href: '/design',
+      },
+      {
+        name: 'CSS',
+        href: '/css',
+      },
+      {
+        name: 'React',
+        href: '/react',
+      },
+      {
+        name: 'Vue',
+        href: '/vue',
+      },
+      {
+        name: 'Elements',
+        href: '/elements',
+      },
+    ];
+
     this.shadowRoot.querySelector('#docs-sidebar').innerHTML = `
     <h3 class="text-12 text-gray-500 mt-10 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
@@ -185,6 +237,20 @@ class FabricDocsSidebar extends HTMLElement {
         </li>`;
       })
       .join('')}
+    </ul>
+
+    <ul id="mobilerepos" class="hidden">
+      <div class="h-1 my-12 w-11/12		mx-auto bg-gray-300"></div>
+      <li class="my-4">
+      ${sites
+        .filter((s) => !document.location.href.includes(s.href))
+        .map(
+          (s) =>
+            `<a aria-label="Fabric ${s.name}" title="Fabric ${s.name}" rel="nofollow" tabindex="0" class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 px-8 my-2" style="border-radius: 4px; text-decoration: none;" role="link" target="_self" href="${s.href}"
+          }>${s.name}</a>`
+        )
+        .join('')}
+        </li>
     </ul>
     `;
 
