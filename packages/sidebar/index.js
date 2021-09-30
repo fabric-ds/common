@@ -5,23 +5,23 @@ class FabricDocsSidebar extends HTMLElement {
     const sites = [
       {
         name: 'Design',
-        href: '/design',
+        href: 'https://www.fabric-ds.io',
       },
       {
         name: 'CSS',
-        href: '/css',
+        href: 'https://css.fabric-ds.io',
       },
       {
         name: 'React',
-        href: '/react',
+        href: 'https://react.fabric-ds.io',
       },
       {
         name: 'Vue',
-        href: '/vue',
+        href: 'https://vue.fabric-ds.io',
       },
       {
         name: 'Elements',
-        href: '/elements',
+        href: 'https://elements.fabric-ds.io',
       },
     ];
 
