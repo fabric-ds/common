@@ -2,6 +2,29 @@ class FabricDocsSidebar extends HTMLElement {
   constructor() {
     super();
 
+    const sites = [
+      {
+        name: 'Design',
+        href: '/design',
+      },
+      {
+        name: 'CSS',
+        href: '/css',
+      },
+      {
+        name: 'React',
+        href: '/react',
+      },
+      {
+        name: 'Vue',
+        href: '/vue',
+      },
+      {
+        name: 'Elements',
+        href: '/elements',
+      },
+    ];
+
     const fabricStylesTemplate = document.createElement('template');
     fabricStylesTemplate.innerHTML = `
       <style>
@@ -11,7 +34,7 @@ class FabricDocsSidebar extends HTMLElement {
         
         .sidebar {
           top: 55px;
-          padding: 20px 20px 70px 20px;
+          padding: 20px 20px 40px 20px;
           z-index: 9;
         }  
 
@@ -36,6 +59,21 @@ class FabricDocsSidebar extends HTMLElement {
       <div id="backdrop" class="backdrop fixed inset-0 hidden"></div>
       <section id="sidebar" style="width: 250px;" class="hidden overflow-scroll lg:block doc-left-menu bg-gray-50 h-screen fixed sidebar">
         <nav id="docs-sidebar" aria-orientation="vertical"></nav>
+        <nav>
+          <ul id="mobilerepos" class="hidden">
+            <div class="h-1 my-12 w-11/12		mx-auto bg-gray-300"></div>
+            <li class="my-4">
+            ${sites
+              .filter((s) => !document.location.href.includes(s.href))
+              .map(
+                (s) =>
+                  `<a aria-label="Fabric ${s.name}" title="Fabric ${s.name}" rel="nofollow" tabindex="0" class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 px-8 my-2" style="border-radius: 4px; text-decoration: none;" role="link" target="_self" href="${s.href}"
+                }>${s.name}</a>`
+              )
+              .join('')}
+              </li>
+          </ul>
+        </nav>
       </section>
   `;
 
@@ -121,29 +159,6 @@ class FabricDocsSidebar extends HTMLElement {
   }
 
   render(first) {
-    const sites = [
-      {
-        name: 'Design',
-        href: '/design',
-      },
-      {
-        name: 'CSS',
-        href: '/css',
-      },
-      {
-        name: 'React',
-        href: '/react',
-      },
-      {
-        name: 'Vue',
-        href: '/vue',
-      },
-      {
-        name: 'Elements',
-        href: '/elements',
-      },
-    ];
-
     this.shadowRoot.querySelector('#docs-sidebar').innerHTML = `
     <h3 class="text-12 text-gray-500 mt-10 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
@@ -237,20 +252,6 @@ class FabricDocsSidebar extends HTMLElement {
         </li>`;
       })
       .join('')}
-    </ul>
-
-    <ul id="mobilerepos" class="hidden">
-      <div class="h-1 my-12 w-11/12		mx-auto bg-gray-300"></div>
-      <li class="my-4">
-      ${sites
-        .filter((s) => !document.location.href.includes(s.href))
-        .map(
-          (s) =>
-            `<a aria-label="Fabric ${s.name}" title="Fabric ${s.name}" rel="nofollow" tabindex="0" class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 px-8 my-2" style="border-radius: 4px; text-decoration: none;" role="link" target="_self" href="${s.href}"
-          }>${s.name}</a>`
-        )
-        .join('')}
-        </li>
     </ul>
     `;
 
