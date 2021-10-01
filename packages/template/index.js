@@ -52,7 +52,14 @@ class FabricDocsTemplate extends HTMLElement {
         )}</f-docs-sidebar>
         <section class="doc-main">
           ${
-            !!document.querySelector(['[slot="banner"]'])
+            !!document.querySelector(['[slot="banner"]']) &&
+            [
+              'https://www.fabric-ds.io/',
+              'https://css.fabric-ds.io/',
+              'https://react.fabric-ds.io/',
+              'https://vue.fabric-ds.io/',
+              'https://elements.fabric-ds.io/',
+            ].includes(document.location.href)
               ? '<div class="doc-front-page-banner"><slot name="banner"></slot></div>'
               : ''
           }
