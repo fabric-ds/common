@@ -203,7 +203,7 @@ class FabricDocsSidebar extends HTMLElement {
                 .map(
                   (i) => `
                 <li>
-                  <a aria-label="${i.title}" ${
+                  <a id="${id}-${i.title}" aria-label="${i.title}" ${
                     i.open ? 'aria-controls="' + id + '-sub-child-list"' : ''
                   } aria-current="${
                     document.location.href.includes(i.href) ? 'true' : 'false'
@@ -215,7 +215,7 @@ class FabricDocsSidebar extends HTMLElement {
                       : ''
                   } class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16 my-2 ${
                     document.location.href.includes(i.href) ? 'bg-gray-200' : ''
-                  }" style="border-radius: 4px; text-decoration: none;" target="_self">${
+                  }" style="border-radius: 4px; text-decoration: none;" target="_self" tabindex="0">${
                     i.title
                   }</a>
 
@@ -301,7 +301,7 @@ class FabricDocsSidebar extends HTMLElement {
 
       [...children].forEach((child) => {
         if (child.children.length >= 2) {
-          child.firstElementChild.addEventListener('click', () => {
+          const openMenu = () => {
             const parentId = child.parentNode.id.split('-')[0];
             const topLevelEntry = this.entries.items.filter(
               (e) => e.id === parentId
@@ -319,6 +319,19 @@ class FabricDocsSidebar extends HTMLElement {
               topLevelEntry;
 
             this.render();
+
+            this.shadowRoot.getElementById(`${id}-${childTitle}`).focus();
+          };
+
+          child.firstElementChild.addEventListener('click', openMenu);
+          child.firstElementChild.addEventListener('keydown', (e) => {
+            switch (e.key) {
+              case ' ':
+              case 'Enter':
+                e.preventDefault();
+                openMenu();
+                break;
+            }
           });
         }
       });
