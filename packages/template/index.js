@@ -53,13 +53,7 @@ class FabricDocsTemplate extends HTMLElement {
         <section class="doc-main">
           ${
             !!document.querySelector(['[slot="banner"]']) &&
-            [
-              'fabric-ds.io',
-              'css.fabric-ds.io',
-              'react.fabric-ds.io',
-              'vue.fabric-ds.io',
-              'elements.fabric-ds.io',
-            ].includes(document.location.hostname)
+            '/'.includes(document.location.pathname)
               ? '<div class="doc-front-page-banner"><slot name="banner"></slot></div>'
               : ''
           }
