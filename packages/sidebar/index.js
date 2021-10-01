@@ -272,7 +272,7 @@ class FabricDocsSidebar extends HTMLElement {
       const id = this.menuIds[i];
 
       // Adding clickHandler to top-level entry
-      this.shadowRoot.getElementById(id).addEventListener('click', () => {
+      const openMenu = () => {
         const e = this.entries.items.filter((e) => e.id === id)[0];
         this.entries.items = this.entries.items.map((i) => ({
           ...i,
@@ -280,6 +280,18 @@ class FabricDocsSidebar extends HTMLElement {
         }));
 
         this.render();
+
+        this.shadowRoot.getElementById(id).focus();
+      };
+
+      this.shadowRoot.getElementById(id).addEventListener('click', openMenu);
+      this.shadowRoot.getElementById(id).addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case ' ':
+          case 'Enter':
+            openMenu();
+            break;
+        }
       });
 
       const children = this.shadowRoot.getElementById(`${id}-child-list`)
