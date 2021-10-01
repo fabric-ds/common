@@ -289,6 +289,7 @@ class FabricDocsSidebar extends HTMLElement {
         switch (e.key) {
           case ' ':
           case 'Enter':
+            e.preventDefault();
             openMenu();
             break;
         }
