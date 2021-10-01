@@ -11,8 +11,9 @@ class FabricDocsFooter extends HTMLElement {
           href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
       <footer aria-orientation="horizontal" class="mt-32 text-12 text-gray-600">
-        <hr class="mb-40" />
-        <div id="docs-footer" class="grid grid-flow-col justify-end gap-24"></div>
+        <hr class="mb-20 md:mb-40" />
+        <div id="docs-footer" class="grid grid-flow-col justify-start md:justify-end items-center gap-24"></div>
+        <p class="block mt-20 md:hidden ">Copyright © 2021 FINN. All rights reserved.</p>
       </footer>
     `;
 
@@ -34,6 +35,7 @@ class FabricDocsFooter extends HTMLElement {
       'grid gap-6 grid-flow-col justify-start items-center  link link--block';
 
     this.shadowRoot.querySelector('#docs-footer').innerHTML += `
+    <p class="hidden mb-0 md:block ">Copyright © 2021 FINN. All rights reserved.</p>
     ${
       this.entries.slack
         ? `<a class="grid gap-6 grid-flow-col justify-start items-center  link link--block" href="${this.entries.slack.href}" title="Slack channel" style="color: inherit;">

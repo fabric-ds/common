@@ -57,10 +57,10 @@ class FabricDocsAssetLinks extends HTMLElement {
       if (url.includes('figma.com')) {
         text = 'View in Figma';
         logo = figmaLogo();
-      } else if (url.includes('fabric-react')) {
+      } else if (url.includes('react')) {
         text = 'View in Fabric React';
         logo = reactLogo();
-      } else if (url.includes('fabric-vue')) {
+      } else if (url.includes('vue')) {
         text = 'View in Fabric Vue';
         logo = vueLogo();
       }
