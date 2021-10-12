@@ -63,11 +63,11 @@ class FabricDocsNavigation extends HTMLElement {
           ${sites
             .map(
               (s) =>
-                `<li><a href="${s.href}" class="${
+                `<li><a href="${s.href}" class="border-t-4 ${
                   document.location.href.includes(s.href)
-                    ? 'border-t-4 border-blue-500'
-                    : ''
-                } inline-block text-gray-900 px-16 py-16" aria-current="${
+                    ? 'border-blue-500'
+                    : 'border-transparent'
+                } inline-block text-gray-900 px-16 pt-12 pb-16" aria-current="${
                   document.location.href.includes(s.href) ? 'true' : 'false'
                 }" aria-label="Fabric ${s.name}" title="Fabric ${
                   s.name
