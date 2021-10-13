@@ -48,7 +48,7 @@ class FabricDocsNavigation extends HTMLElement {
           </button>
           <div class="hidden lg:flex items-center pl-16" style="width: 250px;">
             <a href="${sites[0].href}/" aria-current="${
-      document.location.href.includes(sites[0].href) ? 'true' : 'false'
+      JSON.stringify(document.location.href.includes(sites[0].href))
     }" aria-label="Fabric Design forside" title="Fabric Design forside" class="flex items-center" style="text-decoration: none;">
             <svg width="48" height="25" viewBox="0 0 48 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title>Fabric Docs</title>
@@ -63,12 +63,12 @@ class FabricDocsNavigation extends HTMLElement {
           ${sites
             .map(
               (s) =>
-                `<li><a href="${s.href}" class="${
+                `<li><a href="${s.href}" class="border-t-4 ${
                   document.location.href.includes(s.href)
-                    ? 'border-t-4 border-blue-500'
-                    : ''
-                } inline-block text-gray-900 px-16 py-16" aria-current="${
-                  document.location.href.includes(s.href) ? 'true' : 'false'
+                    ? 'border-blue-500'
+                    : 'border-transparent'
+                } inline-block text-gray-900 px-16 pt-12 pb-16" aria-current="${
+                  JSON.stringify(document.location.href.includes(s.href))
                 }" aria-label="Fabric ${s.name}" title="Fabric ${
                   s.name
                 }" rel="nofollow">${s.name}</a></li>`
