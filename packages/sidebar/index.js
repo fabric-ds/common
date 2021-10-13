@@ -306,7 +306,7 @@ class FabricDocsSidebar extends HTMLElement {
             const topLevelEntry = this.entries.items.filter(
               (e) => e.id === parentId
             )[0];
-            const childTitle = child.children[0].ariaLabel;
+            const childTitle = child.children[0].title;
 
             // Toggle the clicked children's open state
             topLevelEntry.items = topLevelEntry.items.map((i) => ({
