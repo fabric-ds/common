@@ -33,7 +33,7 @@ class FabricDocsNavigation extends HTMLElement {
             type="text/css"
             href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
         />
-        <nav class="doc-main-menu border-b flex static bg-white fixed left-0 right-0 z-10" aria-label="Topp">
+        <nav class="doc-main-menu border-b flex static bg-white fixed left-0 right-0 z-10" aria-label="Top">
           <button id="hamburger-menu" class="flex lg:hidden p-12">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g>
