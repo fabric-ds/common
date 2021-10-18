@@ -135,10 +135,10 @@ class FabricDocsSidebar extends HTMLElement {
 
           for (const key in child) {
             const subchild = child[key];
-
             for (const key in subchild) {
-              if (document.location.href.includes(subchild[key].href))
+              if (document.location.href.includes(subchild[key].href)) {
                 return true;
+              }
             }
           }
         }
@@ -148,8 +148,15 @@ class FabricDocsSidebar extends HTMLElement {
     this.entries.items = this.entries.items.map((i) => ({
       ...i,
       open:
-        !!i.items?.filter((i) => document.location.href.includes(i.href))[0] ||
-        oneChildOpen(i)
+        !!i.items?.filter((i) => {
+          {
+            const match = document.location.href.includes(i.href);
+            if (match) {
+              document.title = `${i.title} — Fabric ${this.entries.category}`;
+            }
+            return match;
+          }
+        })[0] || oneChildOpen(i)
           ? i.open
             ? i.open
             : !i.open
@@ -157,9 +164,13 @@ class FabricDocsSidebar extends HTMLElement {
       items: i.hasOwnProperty('items')
         ? i.items.map((i) => ({
             ...i,
-            open: !!i.items?.filter((i) =>
-              document.location.href.includes(i.href)
-            )[0]
+            open: !!i.items?.filter((i) => {
+              const match = document.location.href.includes(i.href);
+              if (match) {
+                document.title = `${i.title} — Fabric ${this.entries.category}`;
+              }
+              return match;
+            })[0]
               ? i.open
                 ? i.open
                 : !i.open
