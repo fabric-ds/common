@@ -71,8 +71,8 @@ class FabricDocsSidebar extends HTMLElement {
           <span class="h3 text-gray-700 ml-12 mt-2">Fabric</span>
           </a>
         </div>
-        <nav id="docs-sidebar"></nav>
-        <nav>
+        <nav id="docs-sidebar" aria-label="Sidebar"></nav>
+        <nav aria-label="Repositories">
           <ul id="mobilerepos" class="hidden">
             <div class="h-1 my-12 w-11/12		mx-auto bg-gray-300"></div>
             <li class="my-4">
