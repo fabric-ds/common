@@ -60,7 +60,7 @@ class FabricDocsTemplate extends HTMLElement {
           }
           ${
             !!document.querySelector(['[slot="content"]'])
-              ? `<div class="mx-auto p-12 md:p-32" style="max-width:1024px">
+              ? `<div class="mx-auto px-12 pb-12 md:px-32 md:pb-32" style="max-width:1024px">
                   <slot name="content"></slot>
                   ${
                     document.querySelector('[data-for="footer"]')
