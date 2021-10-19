@@ -1,6 +1,6 @@
 {
   "name": "@fabric-ds/common",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "server": "https://assets.finn.no",
   "files": "dist"
 }
