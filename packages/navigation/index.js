@@ -76,7 +76,7 @@ class FabricDocsNavigation extends HTMLElement {
             .join('')}
           </ul>
           <p class="absolute right-16 top-12 bg-yellow-100 text-gray-700 p-4 px-8 rounded-4 text-12 lg:text-14 lg:top-14">
-            Beta v1.0
+            Beta
           </p>
         </nav>
     `;
