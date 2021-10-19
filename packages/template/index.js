@@ -43,6 +43,7 @@ class FabricDocsTemplate extends HTMLElement {
         .doc-front-page-banner {
             background: linear-gradient(94.46deg, #0D55C8 3.76%, #1593E9 99.18%);
             padding: 60px 0px;
+            margin-bottom:32px;
         }
       </style>
       <f-docs-navigation></f-docs-navigation>
