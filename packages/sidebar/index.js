@@ -180,9 +180,9 @@ class FabricDocsSidebar extends HTMLElement {
 
   render(first) {
     this.shadowRoot.querySelector('#docs-sidebar').innerHTML = `
-    <h3 class="text-12 text-gray-500 mt-10 px-8" style="font-weight: 100;">${
+    <h2 class="text-12 text-gray-500 mt-10 px-8" style="font-weight: 100;">${
       this.entries.category.toUpperCase() || ''
-    }</h3>
+    }</h2>
     <ul>
     ${this.entries.items
       .map((i) => {
