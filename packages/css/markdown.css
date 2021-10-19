@@ -1,0 +1,127 @@
+main {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+main code,
+main kbd,
+main pre,
+main samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+main html [type='button'],
+main [type='reset'],
+main [type='submit'] {
+  -webkit-appearance: button;
+}
+
+main code {
+  padding: 3px 5px;
+  margin: 0;
+  font-size: 90% !important;
+  background-color: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+}
+
+main .example {
+  padding: 30px;
+  border: 3px solid rgb(246, 248, 250);
+  margin-bottom: 16px;
+}
+
+main .example-controls {
+  background: #f1f5f9;
+  margin: 32px -32px -32px;
+  padding: 8px 8px 8px 12px;
+}
+
+main h4,
+main h5,
+main h6 {
+  margin-bottom: 12px;
+}
+
+main h1 {
+  margin-bottom: 20px;
+}
+
+main h2 {
+  margin-top: 48px;
+  margin-bottom: 20px;
+}
+
+main h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main p,
+main ul,
+main dl {
+  padding-bottom: 16px;
+}
+
+main ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+main ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+main li {
+  padding-bottom: 4px;
+  padding-left: 16px;
+  list-style-type: square;
+}
+
+main table {
+  margin-top: 16px;
+  padding: 0;
+  width: 100%;
+}
+
+main tr {
+  border-top: 1px;
+  border-color: #d4d4d4;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+main th,
+main td {
+  border: 1px solid #d4d4d4;
+  background: white;
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 14px;
+  text-align: left;
+}
+
+main pre {
+  padding-bottom: 16px;
+}
+
+main  {
+  overflow-wrap: break-word;
+}
+
+main strong {
+  font-weight: bold;
+}
+
+main hr {
+  border-style: none;
+  color: #d4d4d4;
+  height: 4px;
+  padding: 0;
+}
