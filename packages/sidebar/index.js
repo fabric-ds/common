@@ -195,11 +195,12 @@ class FabricDocsSidebar extends HTMLElement {
         }
 
         return `<li class="my-4">
-          <a id="${id}" aria-label="${i.title}" ${
+          <a id="${id}" ${
           i.open ? 'aria-controls="' + id + '-child-list"' : ''
-        } tabindex="0" class="w-full inline-flex align-center hover:bg-gray-200 text-14 text-gray-700 font-bold py-6 px-8" style="border-radius: 4px; text-decoration: none;" role="link" aria-expanded="${
-          i.open
-        }" target="_self" ${i.href ? `href="${i.href}"` : ''}>${i.title}</a>
+        } class="w-full inline-flex align-center hover:bg-gray-200 text-14 text-gray-700 font-bold py-6 px-8" style="border-radius: 4px; text-decoration: none;" aria-expanded="${i.open}" ${i.href
+          ? `href="${i.href}" target="_self"`
+          : 'tabindex="0" role="button"'
+        }>${i.title}</a>
           
         ${
           i.items
