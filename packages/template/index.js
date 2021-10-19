@@ -45,6 +45,19 @@ class FabricDocsTemplate extends HTMLElement {
             padding: 60px 0px;
             margin-bottom:32px;
         }
+        .mdx code {
+          padding: 0.2em 0.4em;
+          margin: 0;
+          font-size: 80% !important;
+          background-color: rgba(175, 184, 193, 0.2);
+          border-radius: 6px;
+        }
+        .mdx .example {
+          padding: 30px;
+          border: 3px solid rgb(246, 248, 250);
+          margin-bottom: 16px;
+          margin-top: -20px;
+        }
       </style>
       <f-docs-navigation></f-docs-navigation>
       <main class="doc-grid min-h-screen">
@@ -60,7 +73,7 @@ class FabricDocsTemplate extends HTMLElement {
           }
           ${
             !!document.querySelector(['[slot="content"]'])
-              ? `<div class="mx-auto p-12 md:p-32" style="max-width:1024px">
+              ? `<div class="mdx mx-auto p-12 md:p-32" style="max-width:1024px">
                   <slot name="content"></slot>
                   ${
                     document.querySelector('[data-for="footer"]')
