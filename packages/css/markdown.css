@@ -89,7 +89,7 @@ main table {
   width: 100%;
 }
 
-main tr {
+main table tr {
   border-top: 1px;
   border-color: #d4d4d4;
   background: white;
@@ -97,8 +97,8 @@ main tr {
   padding: 0;
 }
 
-main th,
-main td {
+main table th,
+main table td {
   border: 1px solid #d4d4d4;
   color: #767676;
   background: white;
@@ -112,23 +112,23 @@ main td {
 }
 
 /** monospace fonts for all columns except the description column */
-main td:not(:last-child) {
+main table td:not(:last-child) {
   font-size: 12px;
 }
 
 /** no bottom margin for the last paragraph in the cell */
-main td p:last-child {
+main table td p:last-child {
   margin-bottom: 0;
 }
 
-main th {
+main table th {
   font-size: 11px;
   text-transform: uppercase;
   vertical-align: top;
 }
 
 /** links to types should keep their colors */
-main td:not(:last-child) a {
+main table td:not(:last-child) a {
   color: inherit;
 }
 
