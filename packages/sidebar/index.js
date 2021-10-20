@@ -90,9 +90,7 @@ class FabricDocsSidebar extends HTMLElement {
       </section>
   `;
 
-    this.attachShadow({ mode: 'open' }).appendChild(
-      fabricStylesTemplate.content
-    );
+    this.attachShadow({ mode: 'open' }).appendChild(fabricStylesTemplate.content);
 
     // Listen to mobile menu events
     const toggleMenu = () => {
@@ -103,9 +101,7 @@ class FabricDocsSidebar extends HTMLElement {
     };
 
     this.addEventListener('hamburger-click', toggleMenu);
-    this.shadowRoot
-      .querySelector('#backdrop')
-      .addEventListener('click', toggleMenu);
+    this.shadowRoot.querySelector('#backdrop').addEventListener('click', toggleMenu);
 
     // Remove backdrop when resizing from mobile to desktop
     window.addEventListener('resize', () => {
@@ -119,9 +115,7 @@ class FabricDocsSidebar extends HTMLElement {
 
     // Set up menu
     this.menuIds = [];
-    this.entries = JSON.parse(
-      document.querySelector('[data-for="sidebar"]').textContent
-    );
+    this.entries = JSON.parse(document.querySelector('[data-for="sidebar"]').textContent);
     this.innerHTML = '';
 
     // Ensure menu is open on refresh
@@ -216,47 +210,27 @@ class FabricDocsSidebar extends HTMLElement {
                 <li>
                   <a id="${id}-${i.title}" aria-label="${i.title}" ${
                     i.open ? 'aria-controls="' + id + '-sub-child-list"' : ''
-                  } aria-current="${
-                    document.location.href.includes(i.href) ? 'true' : 'false'
-                  }" title="${i.title}" ${
-                    i.href
-                      ? `href="${i.href}"`
-                      : i.onClick
-                      ? `onclick="${i.onClick}"`
-                      : ''
+                  } aria-current="${document.location.href.includes(i.href) ? 'true' : 'false'}" title="${i.title}" ${
+                    i.href ? `href="${i.href}"` : i.onClick ? `onclick="${i.onClick}"` : ''
                   } class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16 my-2 ${
                     document.location.href.includes(i.href) ? 'bg-gray-200' : ''
-                  }" style="border-radius: 4px; text-decoration: none;" target="_self" tabindex="0">${
-                    i.title
-                  }</a>
+                  }" style="border-radius: 4px; text-decoration: none;" target="_self" tabindex="0">${i.title}</a>
 
                   ${
                     i.items
-                      ? `<div class="${
-                          i.open ? 'block' : 'hidden'
-                        }" aria-hidden="${!i.open}">
+                      ? `<div class="${i.open ? 'block' : 'hidden'}" aria-hidden="${!i.open}">
                       <ul id="${id}-sub-child-list" class="mb-0">
                         ${i.items
                           .map(
                             (i) =>
                               `<li>
                             <a aria-label="${i.title}" aria-current="${
-                                document.location.href.includes(i.href)
-                                  ? 'true'
-                                  : 'false'
+                                document.location.href.includes(i.href) ? 'true' : 'false'
                               }" title="${i.title}" ${
-                                i.href
-                                  ? `href="${i.href}"`
-                                  : i.onClick
-                                  ? `onclick="${i.onClick}"`
-                                  : ''
+                                i.href ? `href="${i.href}"` : i.onClick ? `onclick="${i.onClick}"` : ''
                               } class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-24 my-2 ${
-                                document.location.href.includes(i.href)
-                                  ? 'bg-gray-200'
-                                  : ''
-                              }" style="border-radius: 4px; text-decoration: none;" target="_self">${
-                                i.title
-                              }</a>
+                                document.location.href.includes(i.href) ? 'bg-gray-200' : ''
+                              }" style="border-radius: 4px; text-decoration: none;" target="_self">${i.title}</a>
                           </li>`
                           )
                           .join('')}
@@ -314,9 +288,7 @@ class FabricDocsSidebar extends HTMLElement {
         if (child.children.length >= 2) {
           const openMenu = () => {
             const parentId = child.parentNode.id.split('-')[0];
-            const topLevelEntry = this.entries.items.filter(
-              (e) => e.id === parentId
-            )[0];
+            const topLevelEntry = this.entries.items.filter((e) => e.id === parentId)[0];
             const childTitle = child.children[0].title;
 
             // Toggle the clicked children's open state
@@ -326,8 +298,7 @@ class FabricDocsSidebar extends HTMLElement {
             }));
 
             // Assign this new state to the local state
-            this.entries.items[this.entries.items.indexOf(topLevelEntry)] =
-              topLevelEntry;
+            this.entries.items[this.entries.items.indexOf(topLevelEntry)] = topLevelEntry;
 
             this.render();
 
