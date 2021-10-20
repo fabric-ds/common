@@ -211,10 +211,14 @@ class FabricDocsSidebar extends HTMLElement {
                 .map(
                   (i) => `
                 <li>
-                  <a id="${id}-${i.title}" aria-label="${i.title}" ${
+                  <a id="${id}-${i.title}" ${
                     i.open ? 'aria-controls="' + id + '-sub-child-list"' : ''
                   } aria-current="${document.location.href.includes(i.href) ? 'true' : 'false'}" title="${i.title}" ${
-                    i.href ? `href="${i.href}"` : i.onClick ? `onclick="${i.onClick}"` : ''
+                    i.href
+                      ? `href="${i.href}"`
+                      : i.onClick
+                      ? `onclick="${i.onClick}" role="button" tabindex="0"`
+                      : ''
                   } class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-16 my-2 ${
                     document.location.href.includes(i.href) ? 'bg-gray-200' : ''
                   }" style="border-radius: 4px; text-decoration: none;" target="_self" tabindex="0">${i.title}</a>
@@ -227,10 +231,12 @@ class FabricDocsSidebar extends HTMLElement {
                           .map(
                             (i) =>
                               `<li>
-                            <a aria-label="${i.title}" aria-current="${
-                                document.location.href.includes(i.href) ? 'true' : 'false'
-                              }" title="${i.title}" ${
-                                i.href ? `href="${i.href}"` : i.onClick ? `onclick="${i.onClick}"` : ''
+                            <a aria-current="${document.location.href.includes(i.href) ? 'true' : 'false'}" title="${i.title}" ${
+                                i.href
+                                  ? `href="${i.href}"`
+                                  : i.onClick
+                                  ? `onclick="${i.onClick}" role="button" tabindex="0"`
+                                  : ''
                               } class="w-full inline-flex align-center hover:bg-gray-200 font-light text-14 text-gray-700 py-6 pl-24 my-2 ${
                                 document.location.href.includes(i.href) ? 'bg-gray-200' : ''
                               }" style="border-radius: 4px; text-decoration: none;" target="_self">${i.title}</a>
