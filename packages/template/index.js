@@ -45,12 +45,17 @@ class FabricDocsTemplate extends HTMLElement {
             padding: 60px 0px;
         }
       </style>
-      <f-docs-navigation></f-docs-navigation>
-      <main class="doc-grid min-h-screen">
-        <f-docs-sidebar>${document.querySelector(
-          '[data-for="sidebar"]'
-        )}</f-docs-sidebar>
-        <section class="doc-main">
+      <header>
+        <f-docs-navigation></f-docs-navigation>
+        <div aria-owns="sidebar-wrapper"></div>
+      </header>
+      <div class="doc-grid min-h-screen">
+        <div id="sidebar-wrapper">
+          <f-docs-sidebar>${document.querySelector(
+            '[data-for="sidebar"]'
+          )}</f-docs-sidebar>
+        </div>
+        <div class="doc-main">
           ${
             !!document.querySelector(['[slot="banner"]']) &&
             '/'.includes(document.location.pathname)
@@ -71,8 +76,8 @@ class FabricDocsTemplate extends HTMLElement {
                 </div>`
               : ''
           }
-        </section>
-      </main>
+        </div>
+      </div>
     `;
 
     this.attachShadow({ mode: 'open' }).appendChild(

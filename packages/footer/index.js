@@ -10,8 +10,8 @@ class FabricDocsFooter extends HTMLElement {
           type="text/css"
           href="https://assets.finn.no/pkg/@fabric-ds/css/v0/fabric.min.css"
       />
-      <footer aria-orientation="horizontal" class="mt-32 text-12 text-gray-600">
-        <hr class="mb-20 md:mb-40" />
+      <footer role="contentinfo" class="mt-32 text-12 text-gray-600">
+        <hr aria-hidden="true" class="mb-20 md:mb-40" />
         <div id="docs-footer" class="grid grid-flow-col justify-start md:justify-end items-center gap-24"></div>
         <p class="block mt-20 md:hidden ">Copyright © 2021 FINN. All rights reserved.</p>
       </footer>
