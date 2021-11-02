@@ -5,24 +5,25 @@ main {
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-main code,
-main kbd,
-main pre,
-main samp {
+main > code,
+main > kbd,
+main > pre,
+main > samp {
   font-family: monospace, monospace;
   font-size: 1em;
   margin-top: 20px;
 }
 
-main html [type='button'],
+main > html [type='button'],
 main [type='reset'],
 main [type='submit'] {
   -webkit-appearance: button;
 }
 
-main code {
+main > code {
   padding: 3px 5px;
   margin: 0;
   font-size: 90% !important;
@@ -42,54 +43,54 @@ main .example-controls {
   padding: 8px 8px 8px 12px;
 }
 
-main h4,
-main h5,
-main h6 {
+main > h4,
+main > h5,
+main > h6 {
   margin-bottom: 12px;
 }
 
-main h1 {
+main > h1 {
   margin-bottom: 20px;
 }
 
-main h2 {
+main > h2 {
   margin-top: 48px;
   margin-bottom: 20px;
 }
 
-main h3 {
+main > h3 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-main ul,
-main dl {
+main > ul,
+main > dl {
   padding-bottom: 16px;
 }
 
-main ul {
+main > ul {
   list-style-type: disc;
   list-style-position: inside;
 }
 
-main ol {
+main > ol {
   list-style-type: decimal;
   list-style-position: inside;
 }
 
-main li {
+main > ul li {
   padding-bottom: 4px;
   padding-left: 16px;
   list-style-type: square;
 }
 
-main table {
+main > table {
   margin-top: 16px;
   padding: 0;
   width: 100%;
 }
 
-main table tr {
+main > table tr {
   border-top: 1px;
   border-color: #d4d4d4;
   background: white;
@@ -97,8 +98,8 @@ main table tr {
   padding: 0;
 }
 
-main table th,
-main table td {
+main > table th,
+main > table td {
   border: 1px solid #d4d4d4;
   color: #767676;
   background: white;
@@ -112,43 +113,39 @@ main table td {
 }
 
 /** monospace fonts for all columns except the description column */
-main table td:not(:last-child) {
+main > table td:not(:last-child) {
   font-size: 12px;
 }
 
 /** no bottom margin for the last paragraph in the cell */
-main table td p:last-child {
+main > table td p:last-child {
   margin-bottom: 0;
 }
 
-main table th {
+main > table th {
   font-size: 11px;
   text-transform: uppercase;
   vertical-align: top;
 }
 
 /** links to types should keep their colors */
-main table td:not(:last-child) a {
+main > table td:not(:last-child) a {
   color: inherit;
 }
 
-main table a {
+main > table a {
   color: inherit;
 }
 
-main pre {
+main > pre {
   padding-bottom: 16px;
 }
 
-main  {
-  overflow-wrap: break-word;
-}
-
-main strong {
+main > strong {
   font-weight: bold;
 }
 
-main hr {
+main > hr {
   border-style: none;
   color: #d4d4d4;
   height: 4px;
