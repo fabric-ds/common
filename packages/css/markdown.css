@@ -8,10 +8,10 @@ main {
   overflow-wrap: break-word;
 }
 
-main > code,
-main > kbd,
-main > pre,
-main > samp {
+main code,
+main kbd,
+main pre,
+main samp {
   font-family: monospace, monospace;
   font-size: 1em;
   margin-top: 20px;
