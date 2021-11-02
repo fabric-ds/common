@@ -23,7 +23,7 @@ main [type='submit'] {
   -webkit-appearance: button;
 }
 
-main > code {
+main code {
   padding: 3px 5px;
   margin: 0;
   font-size: 90% !important;
