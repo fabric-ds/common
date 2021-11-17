@@ -8,22 +8,30 @@ main {
   overflow-wrap: break-word;
 }
 
-main code,
-main kbd,
-main pre,
-main samp {
+main code:not(:where(.example *)),
+main kbd:not(:where(.example *)),
+main pre:not(:where(.example *)),
+main samp:not(:where(.example *)) {
   font-family: monospace, monospace;
   font-size: 1em;
   margin-top: 20px;
 }
 
-main > html [type='button'],
+main [type='button'],
 main [type='reset'],
 main [type='submit'] {
   -webkit-appearance: button;
 }
 
-main code {
+main > div:not(:where(.example *)) {
+  margin-bottom: 16px;
+}
+
+main > div + .example {
+  margin-top: -16px;
+}
+
+main code:not(:where(.example *)) {
   padding: 3px 5px;
   margin: 0;
   font-size: 90% !important;
@@ -43,54 +51,59 @@ main .example-controls {
   padding: 8px 8px 8px 12px;
 }
 
-main > h4,
-main > h5,
-main > h6 {
+main h4:not(:where(.example *)),
+main h5:not(:where(.example *)),
+main h6:not(:where(.example *)) {
   margin-bottom: 12px;
 }
 
-main > h1 {
+main h1:not(:where(.example *)) {
   margin-bottom: 20px;
 }
 
-main > h2 {
+main h2:not(:where(.example *)) {
+  margin-bottom: 20px;
+}
+
+main h2:not(:first-child):not(:where(.example *)) {
   margin-top: 48px;
-  margin-bottom: 20px;
 }
 
-main > h3 {
+main h3:not(:where(.example *)) {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-main > ul,
-main > dl {
+main ul:not(:where(.example *)),
+main dl:not(:where(.example *)) {
   padding-bottom: 16px;
 }
 
-main > ul {
+main ul:not(:where(.example *)) {
   list-style-type: disc;
   list-style-position: inside;
+  padding-left: 24px;
+  padding-top: 8px;
 }
 
-main > ol {
+main ol:not(:where(.example *)) {
   list-style-type: decimal;
   list-style-position: inside;
 }
 
-main > ul li {
+main ul li:not(:where(.example *)) {
   padding-bottom: 4px;
   padding-left: 16px;
   list-style-type: square;
 }
 
-main > table {
+main table:not(:where(.example *)) {
   margin-top: 16px;
   padding: 0;
   width: 100%;
 }
 
-main > table tr {
+main table tr:not(:where(.example *)) {
   border-top: 1px;
   border-color: #d4d4d4;
   background: white;
@@ -98,8 +111,8 @@ main > table tr {
   padding: 0;
 }
 
-main > table th,
-main > table td {
+main table th:not(:where(.example *)),
+main table td:not(:where(.example *)) {
   border: 1px solid #d4d4d4;
   color: #767676;
   background: white;
@@ -113,39 +126,40 @@ main > table td {
 }
 
 /** monospace fonts for all columns except the description column */
-main > table td:not(:last-child) {
+main table td:not(:last-child):not(:where(.example *)) {
   font-size: 12px;
 }
 
 /** no bottom margin for the last paragraph in the cell */
-main > table td p:last-child {
+main table td p:last-child:not(:where(.example *)) {
   margin-bottom: 0;
 }
 
-main > table th {
+main table th:not(:where(.example *)) {
   font-size: 11px;
   text-transform: uppercase;
   vertical-align: top;
 }
 
 /** links to types should keep their colors */
-main > table td:not(:last-child) a {
+main table td:not(:last-child) a:not(:where(.example *)) {
   color: inherit;
 }
 
-main > table a {
+main table a:not(:where(.example *)) {
   color: inherit;
 }
 
-main > pre {
+main pre:not(:where(div *)) {
   padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
-main > strong {
+main strong:not(:where(.example *)) {
   font-weight: bold;
 }
 
-main > hr {
+main hr:not(:where(.example *)) {
   border-style: none;
   color: #d4d4d4;
   height: 4px;
